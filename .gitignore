@@ -1,0 +1,15 @@
+.venv
+.env
+client_id.json
+token.json
+__pycache__
+tokens.py
+gospelbot_log.txt
+*.log
+*.mp4
+*.mp3
+*.wav
+*.png
+*.ogg
+*.jpeg
+*.jpg
