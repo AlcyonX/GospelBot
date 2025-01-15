@@ -2,11 +2,9 @@ from video import *
 from utilities import * 
 import argparse
 
-# VARIABLES
-
 load_dotenv()
 
-VERSION = os.getenv("VERSION")
+__version__ = "1.0.0"
 
 client_id = "json/api/.client_id.json"
 token = "json/api/token.json"
@@ -14,31 +12,29 @@ token = "json/api/token.json"
 edit_content = "json/data/edit_content"
 verses = "json/data/edit_content"
 
-settings = "json/settings.json"
+settings_file = "json/settings.json"
 
-with open(settings, "r") as file:
-    SETTINGS = json.load(file)
+with open(settings_file, "r") as file:
+    settings = json.load(file)
 
-def publish_daily_verse_short(test):
+def publish_daily_verse_short(publish):
 
     print("GospelBot - Creating and publishing a daily verse short video started...")
 
-    reference, verse = get_random_verse(SETTINGS["BIBLE_ID"])
+    reference, verse = get_random_verse(settings["bible_id"])
 
     print("GospelBot - Bibical reference chosen : " + reference)
     print("GospelBot - Bibical verse chosen : " + verse)
 
-    video = daily_verse_short(reference, verse)
+    video = generate_daily_verse_short(reference, verse)
 
-    title = f"✝️ Daily verse 💝 {time.strftime("%D/%M/%Y")} #god #jesus #holyspirit"
-
-    print("GospelBot - Title : " + title)
-
-    description = reference + " - " + verse
+    title = f"✝️ Daily verse 💝 {time.strftime("%D/%M/%Y")} {random.sample(settings["hashtags"], 4)}"
+    description = f"{reference}-{verse}"
 
     print("GospelBot - Description : " + description)
+    print("GospelBot - Title : " + title)
 
-    if not test:
+    if publish:
 
         print("GospelBot - Publishing...")
 
@@ -46,7 +42,7 @@ def publish_daily_verse_short(test):
             video,
             title,
             description,
-            SETTINGS["KEYWORDS"],
+            settings["keywords"],
             22,
             "public",
             key

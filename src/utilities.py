@@ -29,14 +29,27 @@ with open(verses, "r") as file:
 
 def do_until_success(func, *args, **kwargs):
 
+    """
+    Tries to execute a function until it succeeds.
+
+    Arguments:
+    func -- The function to execute.
+    *args -- Positional arguments to pass to the function.
+    **kwargs -- Keyword arguments to pass to the function.
+
+    Prints an error message if an exception occurs and retries.
+    """
+
     while True:
         try:
             func(*args, **kwargs)
             break
         except Exception as e:
-            print(f"GospelBot - An error occured : {e}")
+            #print(f"GospelBot - An error occured : {e}")
+            raise e
 
 def random_file(folder):
+
     files = [f for f in os.listdir(folder) if os.path.isfile(os.path.join(folder, f))]
     
     if not files:
@@ -46,6 +59,7 @@ def random_file(folder):
     return folder + selected_file
 
 def unique_random_files(folder, count):
+
     files = os.listdir(folder)
     selected_files = random.sample(files, min(count, len(files)))
     return [os.path.join(folder, file) for file in selected_files]
@@ -351,6 +365,7 @@ async def text_to_speech(text: str, voice: str) -> str:
     output_file = f"{os.path.dirname(__file__)}/media/audio/speech/{voice}-{str(time.time())}.mp3"
 
     communicate = edge_tts.Communicate(text, voice, rate="+20%", pitch="+20Hz", volume="+10%")
+    open(output_file, "x").close()
     await communicate.save(output_file)
 
     return output_file

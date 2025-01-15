@@ -1,19 +1,17 @@
 from moviepy import *
 from utilities import *
 
-# VARIABLES
-
 scirpt_dir = Path(__file__).parent
 
-output_folder = f"output/"
-video_folder = f"media/video/"
-sticker_folder = f"media/image/sticker/"
-extracts_folder = f"media/audio/extracts/"
+output_folder = "output/"
+video_folder = "media/video/"
+sticker_folder = "media/image/sticker/"
+extracts_folder = "media/audio/extracts/"
 
-settings = f"json/settings.json"
+settings_file = "json/settings.json"
 
-with open(settings, "r") as file:
-    SETTINGS = json.load(file)
+with open(settings_file, "r") as file:
+    settings = json.load(file)
 
 def adjust_text_size(text,fontsize,intensity=10):
     font_size = fontsize - len(text) / intensity
@@ -362,7 +360,7 @@ def edit_short(title, references, credits_translation,  transition_duration=0.5)
 
     return video
 
-def daily_verse_short(reference, verse): 
+def generate_daily_verse_short(reference, verse): 
 
     filename= "Daily Verse-"+str(int(time.time()))+".mp4"
     
@@ -381,10 +379,10 @@ def daily_verse_short(reference, verse):
         {"text":"And spread the gospel with me !", "position":("center", "center"), "delay":-0.3, "color":"yellow"},
         {"text":"By sharing to all of your friend.", "position":("center", "center"), "delay":0, "color":"yellow"},
         {"text":"God bless you !", "position":("center", "center"), "delay":0, "color":"cyan"}
-        ]
+    ]
     
-    oldstart = 0
-    voice = random.choice(SETTINGS["VOICES"])
+    old_start = 0
+    voice = random.choice(settings["voices"])
     
     for key in subtitles:
 
@@ -394,7 +392,7 @@ def daily_verse_short(reference, verse):
         color = key["color"]
 
         speech = asyncio.run(text_to_speech(text, voice))
-        speech_clip = AudioFileClip(speech).with_start(oldstart)
+        speech_clip = AudioFileClip(speech).with_start(old_start)
         background_video = pixabay_video(video_folder, "landscape", speech_clip.duration + delay)
 
         clip = (
@@ -402,13 +400,22 @@ def daily_verse_short(reference, verse):
             .with_duration(speech_clip.duration + delay)
             .cropped(x1=100, y1=100, x2=720, y2=1280)
             .resized((1080,1920))
-            .with_start(oldstart)
+            .with_start(old_start)
         )
 
         subtitle = (
-            TextClip(text=text, color=color, font_size=SETTINGS["MEDIUM"], size=(1000, None), font=SETTINGS["ITALIC"], stroke_color="black", stroke_width=3, method="caption")
+            TextClip(
+                text=text,
+                color=color, 
+                font_size=settings["medium_font_size"], 
+                size=(1000, None), 
+                font=settings["paragraph_font_family"], 
+                stroke_color="black", 
+                stroke_width=3, 
+                method="caption"
+            )
             .with_duration(speech_clip.duration + delay)
-            .with_start(oldstart)
+            .with_start(old_start)
             .with_position(position)
         )
 
@@ -420,17 +427,16 @@ def daily_verse_short(reference, verse):
         sticker = (
             ImageClip(random_file(sticker_folder))
             .with_duration(speech_clip.duration + delay)
-            .with_start(oldstart)
+            .with_start(old_start)
             .resized(height=abs(960 - h))
             .with_position(('center', "bottom"))
         )
 
         background = (
-            
             ColorClip(size=size, color=[0, 0, 0])
             .with_duration(speech_clip.duration + delay)
             .with_position(position)
-            .with_start(oldstart)
+            .with_start(old_start)
             .with_opacity(.5)
         )
 
@@ -438,7 +444,7 @@ def daily_verse_short(reference, verse):
         clips.extend([clip, sticker, background, subtitle])
         sounds.append(speech_clip)
 
-        oldstart += speech_clip.duration + delay
+        old_start += speech_clip.duration + delay
 
 
     # Set the music
@@ -451,11 +457,11 @@ def daily_verse_short(reference, verse):
 
     credits = (
         TextClip(
-            text=SETTINGS["USERNAME"], 
-            font_size=SETTINGS["MEDIUM"], 
+            text=settings["USERNAME"], 
+            font_size=settings["MEDIUM"], 
             color='white', 
             method="label", 
-            font=SETTINGS["BOLD"], 
+            font=settings["BOLD"], 
             stroke_width=3, 
             stroke_color='black'
         )

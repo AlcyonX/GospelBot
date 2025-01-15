@@ -1,5 +1,29 @@
 {
-    "EDIT_TITLES" : [
+
+    "bible_id" : "BSB",
+
+    "username" : "@GospelBot",
+
+    "small_font_size" : 80,
+    "medium_font_size" : 90,
+    "large_font_size" : 100,
+
+    "paragraph_font_family" : "font/Nena Serif Heavy Italic.ttf",
+    "title_font_family" : "font/Nena Serif Heavy.ttf",
+    "subtitle_font_family" : "font/Nena Serif Bold.ttf",
+
+    "hashtags" : [
+        "#god",
+        "#holyspirit",
+        "#jesus",
+        "#jesuschrist",
+        "#jesuslovesyou",
+        "#gospel",
+        "#truth",
+        "#faith"
+    ],
+
+    "edit_video_title" : [
         "👀 CHRISTIANS WATCH THIS ✝️",
         "💡 DON'T FORGET THESE SIN ✝️",
         "⚠️ WARNING FOR CHRISTIANS ✝️",
@@ -14,7 +38,7 @@
         "💗 LIVE BY FAITH, NOT BY SIGHT ✝️"
     ],
 
-    "COMMENTS" : [
+    "comments" : [
         "Amen chain ✝️🗿",
         "Praise be to the Most High 🙏",
         "Blessings to all 🙌",
@@ -36,7 +60,7 @@
         "May your heart be filled with peace 🕊️"
     ],
 
-    "KEYWORDS" : [
+    "keywords" : [
         "jesus", "god", "shorts", "short", "viral", "cross", "holyspirit", "bible", "christianity",
         "faith", "salvation", "grace", "prayer", "church", "hope", "love", "repentance", "forgiveness",
         "holiness", "discipleship", "worship", "kingdomofgod", "jesuschrist", "spiritualgrowth", "truth",
@@ -45,11 +69,7 @@
         "newcreation", "kingdom", "christianfaith", "mercy", "charity", "loveoneanother", "lord", "spiritualwarfare"
     ],
 
-    "BIBLE_ID" : "BSB",
-
-    "USERNAME" : "@GospelBot",
-
-    "VOICES" : [
+    "voices" : [
         "Microsoft Server Speech Text to Speech Voice (en-AU, WilliamNeural)",
         "Microsoft Server Speech Text to Speech Voice (en-CA, LiamNeural)",
         "Microsoft Server Speech Text to Speech Voice (en-NZ, MitchellNeural)",
@@ -64,13 +84,5 @@
         "Microsoft Server Speech Text to Speech Voice (en-US, GuyNeural)",
         "Microsoft Server Speech Text to Speech Voice (en-US, RogerNeural)",
         "Microsoft Server Speech Text to Speech Voice (en-US, SteffanNeural)"
-        ],
-    
-    "SMALL" : 80,
-    "MEDIUM" : 90,
-    "LARGE" : 100,
-
-    "ITALIC" : "font/Nena Serif Heavy Italic.ttf",
-    "BOLD" : "font/Nena Serif Heavy.ttf",
-    "FONT" : "font/Nena Serif Bold.ttf"
+    ]
 }

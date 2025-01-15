@@ -1,10 +1,21 @@
+# Ignore directories
+
+__pycache__
 .venv
+
+# Ignore sensible files
+
 .env
 client_id.json
 token.json
-__pycache__
+
+# Ignore test files
+
 tokens.py
 gospelbot_log.txt
+
+# Ignore filenames
+
 *.log
 *.mp4
 *.mp3
