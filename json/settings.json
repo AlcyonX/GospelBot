@@ -1,4 +1,9 @@
 {
+    "video_folder" : "media/video/",
+    "sticker_folder" : "media/image/sticker/",
+    "extracts_folder" : "media/audio/extracts/",
+    "output_folder" : "output/",
+    "verses_file" : "json/data/verses.json",
 
     "bible_id" : "BSB",
 
