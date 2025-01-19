@@ -1,0 +1,115 @@
+// All available settings for the GospelBot program
+// All of these settings need to be set, otherwise the program will not work.
+
+{
+
+    // Folders
+
+    "downloads_folder" : "downloads/", // Where the downloaded files (pixabay or edge_tts) will be stored
+    "sticker_folder" : "stickers/", // Stickers for the video generation
+    "extracts_folder" : "music_extracts/", // Music extracts for the video generation (less than 20 seconds)
+    "output_folder" : "output/", // Where the final video generations will be stored
+    "verses_folder" : "verses/", // Verses database for dailyverse videos
+    "token_folder" : "token/", // Token for YouTube api
+    "client_id_folder" : "client_id/", // Secrent client id for YouTube api
+    "logs_folder" : "logs/", // Where the logs will be stored
+    "edit_musics_folder" : "edit/edit_musics/",
+    "edit_content_folder" : "edit/edit_content/",
+    "edit_introductions_folder" : "edit/edit_introductions/",
+    "edit_backgrounds_folder" : "edit/edit_backgrounds/",
+    "images_folder" : "images/",
+
+    // Ids
+
+    "bible_id" : "BSB", // Bible ids and translations : https://bible.helloao.org/api/available_translations.json
+
+    // Customizations
+
+    "small_font_size" : 80,
+    "medium_font_size" : 90,
+    "large_font_size" : 100,
+
+    "paragraph_font_family" : "fonts/Nena Serif Heavy Italic.ttf",
+    "title_font_family" : "fonts/Nena Serif Heavy.ttf",
+    "subtitle_font_family" : "fonts/Nena Serif Bold.ttf",
+
+    // YouTube settings
+
+    "username" : "@GospelBot", // Change it to your channel username
+
+    "hashtags" : [ // Hastags included in the title of the videos
+        "#god",
+        "#holyspirit",
+        "#jesus",
+        "#jesuschrist",
+        "#jesuslovesyou",
+        "#gospel",
+        "#truth",
+        "#faith"
+    ],
+
+    "edit_video_title" : [ // Title presets
+        "👀 CHRISTIANS WATCH THIS ✝️",
+        "💡 DON'T FORGET THESE SIN ✝️",
+        "⚠️ WARNING FOR CHRISTIANS ✝️",
+        "🔥 IF YOU ARE CHRISTIAN WATCH THIS ✝️",
+        "🙏 BE A BETTER CHRISTIAN ✝️",
+        "🧠 REMEMBER THESE SIN ✝️",
+        "💪 STAY STRONG IN FAITH ✝️",
+        "🙏 LIVE RIGHTEOUSLY EVERY DAY ✝️",
+        "📖 A CHRISTIAN'S GUIDE TO HOLINESS ✝️",
+        "😁 HOW TO BE A TRUE DISCIPLE ✝️",
+        "👊 OVERCOMING THE ENEMY ✝️",
+        "💗 LIVE BY FAITH, NOT BY SIGHT ✝️"
+    ],
+
+    "comments" : [ // Comment presets
+        "Amen chain ✝️🗿",
+        "Praise be to the Most High 🙏",
+        "Blessings to all 🙌",
+        "Faith is the key 🔑✝️",
+        "In God we trust 💫",
+        "Hope and love in Christ ❤️✝️",
+        "Let the Spirit guide you ✨",
+        "Grace upon grace 🌿",
+        "Walk by faith, not by sight 👣",
+        "Fear not, for He is with you 💪",
+        "Through Christ, all things are possible 🙏",
+        "The truth will set you free 🔓",
+        "Rejoice in the Lord always 😊",
+        "Faith moves mountains ⛰️",
+        "God's love never fails 💖",
+        "Be strong and courageous 💪✝️",
+        "Blessed and highly favored 🌟",
+        "With God, all things are possible 🌍",
+        "May your heart be filled with peace 🕊️"
+    ],
+
+    "keywords" : [ // Keywords for more views ;)
+        "jesus", "god", "shorts", "short", "viral", "cross", "holyspirit", "bible", "christianity",
+        "faith", "salvation", "grace", "prayer", "church", "hope", "love", "repentance", "forgiveness",
+        "holiness", "discipleship", "worship", "kingdomofgod", "jesuschrist", "spiritualgrowth", "truth",
+        "blessings", "eternal life", "christianlife", "evangelism", "priesthood", "redemption", "peace",
+        "fellowship", "scripture", "gospel", "praise", "testimony", "salvationthroughjesus", "baptism",
+        "newcreation", "kingdom", "christianfaith", "mercy", "charity", "loveoneanother", "lord", "spiritualwarfare"
+    ],
+
+    // Voice generation
+
+    "voices" : [ // Edge TTS repository : https://github.com/rany2/edge-tts
+        "Microsoft Server Speech Text to Speech Voice (en-AU, WilliamNeural)",
+        "Microsoft Server Speech Text to Speech Voice (en-CA, LiamNeural)",
+        "Microsoft Server Speech Text to Speech Voice (en-NZ, MitchellNeural)",
+        "Microsoft Server Speech Text to Speech Voice (en-US, AndrewMultilingualNeural)",
+        "Microsoft Server Speech Text to Speech Voice (en-US, BrianMultilingualNeural)",
+        "Microsoft Server Speech Text to Speech Voice (en-US, AndrewNeural)",
+        "Microsoft Server Speech Text to Speech Voice (en-US, BrianNeural)",
+        "Microsoft Server Speech Text to Speech Voice (en-GB, RyanNeural)",
+        "Microsoft Server Speech Text to Speech Voice (en-GB, ThomasNeural)",
+        "Microsoft Server Speech Text to Speech Voice (en-US, ChristopherNeural)",
+        "Microsoft Server Speech Text to Speech Voice (en-US, EricNeural)",
+        "Microsoft Server Speech Text to Speech Voice (en-US, GuyNeural)",
+        "Microsoft Server Speech Text to Speech Voice (en-US, RogerNeural)",
+        "Microsoft Server Speech Text to Speech Voice (en-US, SteffanNeural)"
+    ]
+}

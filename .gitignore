@@ -3,26 +3,25 @@
 __pycache__
 .venv
 
+output/*
+downloads/*
+edit/edit_musics/*
+music_extracts/*
+logs/*
+build
+youtube
+
 # Ignore sensible files
 
 .env
-client_id.json
 token.json
-
-# Ignore test files
-
-tokens.py
+client_id.json
 gospelbot_log.txt
+requirements.txt
 
 # Ignore filenames
 
 *.log
-*.mp4
-*.mp3
-*.wav
-*.png
-*.ogg
-*.jpeg
-*.jpg
 *.ico
 *.pdn
+*.egg-info
