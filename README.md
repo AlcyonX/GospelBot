@@ -66,7 +66,7 @@
 
 7. Run the bot:
     ```bash
-    python3 src/gospelbot/__main__.py
+    venv/bin/python3 src/gospelbot/__main__.py
     ```
 
 Now you're all set up to run the GospelBot!
