@@ -5,8 +5,6 @@ __pycache__
 
 output/*
 downloads/*
-edit/edit_musics/*
-music_extracts/*
 logs/*
 build
 youtube
