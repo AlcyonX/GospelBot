@@ -222,9 +222,6 @@ def generate_edit_short(title: str, references: list,  transition_duration=0.5):
     # Final video
     video = CompositeVideoClip(clips)
     video = video.with_audio(music)
-
-    os.makedirs(settings["output_folder"], exist_ok=True)
-
     video.write_videofile(video_path, fps=24, preset='ultrafast', threads=4, codec="libx264")
 
     return video_path

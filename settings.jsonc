@@ -5,6 +5,22 @@
 
     // Folders
 
+    "folders" : [ // Folder list
+        "downloads_folder",
+        "sticker_folder",
+        "extracts_folder",
+        "output_folder",
+        "verses_folder",
+        "token_folder",
+        "client_id_folder",
+        "logs_folder",
+        "edit_musics_folder",
+        "edit_content_folder",
+        "edit_introductions_folder",
+        "edit_backgrounds_folder",
+        "images_folder"
+    ],
+
     "downloads_folder" : "downloads/", // Where the downloaded files (pixabay or edge_tts) will be stored
     "sticker_folder" : "stickers/", // Stickers for the video generation
     "extracts_folder" : "music_extracts/", // Music extracts for the video generation (less than 20 seconds)

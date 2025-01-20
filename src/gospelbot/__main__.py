@@ -25,9 +25,11 @@ from settings import *
 import dotenv
 import argparse
 
-dotenv.load_dotenv()
-
 def main() -> None:
+
+    for folder in settings["folders"]:
+        os.makedirs(settings[folder], exist_ok=True)
+
     parser = argparse.ArgumentParser(description="A program that spreads the gospel on social media.")
     
     parser.add_argument("--type", type=str, choices=["edit", "dailyverse"], help="Set the type of video")

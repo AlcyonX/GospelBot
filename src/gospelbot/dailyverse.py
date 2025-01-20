@@ -161,11 +161,7 @@ def generate_daily_verse_short(reference: str, verse: str) -> str:
     video_path = f"{settings['output_folder']}{filename}"
 
     video = CompositeVideoClip(clips)
-      
     video = video.with_audio(final_sound)
-
-    os.makedirs(settings["output_folder"], exist_ok=True)
-    
     video.write_videofile(video_path, codec="libx264", preset='ultrafast', fps=24, logger=None)
 
     return video_path
