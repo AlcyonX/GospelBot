@@ -69,7 +69,7 @@ def generate_daily_verse_short(reference: str, verse: str) -> str:
 
         speech = asyncio.run(text_to_speech(text, voice, settings["downloads_folder"]))
         speech_clip = AudioFileClip(speech).with_start(old_start)
-        background_video = "downloads/landscape-1737142300.mp4" #pixabay_video(settings["downloads_folder"], "landscape", speech_clip.duration + delay)
+        background_video = pixabay_video(settings["downloads_folder"], "landscape", speech_clip.duration + delay)
 
         # Set the background video
         clip = (
