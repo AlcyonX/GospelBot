@@ -59,7 +59,7 @@ def generate_edit_short(title: str, references: list,  transition_duration=0.5):
     )
     
     # Create Vignette mask
-    vignette_path = f"{settings["images_folder"]}vignette.png"
+    vignette_path = f"{settings['images_folder']}vignette.png"
     vignette = (
         ImageClip(vignette_path)
         .resized((width, height))
@@ -217,7 +217,7 @@ def generate_edit_short(title: str, references: list,  transition_duration=0.5):
     )
 
     clips.append(credits)
-    video_path = f"{settings["output_folder"]}{filename}"
+    video_path = f"{settings['output_folder']}{filename}"
 
     # Final video
     video = CompositeVideoClip(clips)
@@ -248,7 +248,7 @@ def edit_short(is_publishing: bool) -> str :
 
     hashtags = random.sample(settings["hashtags"], 4)
 
-    title = f"{settings["edit_video_title"]} {time.strftime("%d/%m/%Y")} {" ".join(hashtags)}"
+    title = f"{settings['edit_video_title']} {time.strftime('%d/%m/%Y')} {' '.join(hashtags)}"
     description = f"Amen !"
 
     print("GospelBot - Title : " + title)

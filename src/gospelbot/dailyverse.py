@@ -158,7 +158,7 @@ def generate_daily_verse_short(reference: str, verse: str) -> str:
 
     print(f"GospelBot - Writing video file : {filename}")
 
-    video_path = f"{settings["output_folder"]}{filename}"
+    video_path = f"{settings['output_folder']}{filename}"
 
     video = CompositeVideoClip(clips)
       
@@ -192,7 +192,7 @@ def daily_verse_short(is_publishing: bool) -> str :
 
     hashtags = random.sample(settings["hashtags"], 4)
 
-    title = f"✝️ Daily verse 💝 {time.strftime("%d/%m/%Y")} {" ".join(hashtags)}"
+    title = f"✝️ Daily verse 💝 {time.strftime('%d/%m/%Y')} {' '.join(hashtags)}"
     description = f"{reference}-{verse}"
 
     print("GospelBot - Title : " + title)

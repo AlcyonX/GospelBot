@@ -30,7 +30,6 @@ imageio-ffmpeg==0.5.1
 iso8601==2.1.0
 jsonc-parser==1.1.5
 kiwisolver==1.4.8
-logging==0.4.9.6
 matplotlib==3.10.0
 moviepy==2.1.1
 multidict==6.1.0

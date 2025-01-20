@@ -22,7 +22,7 @@
 
 ### Prerequisites
 
-- Python 3.13
+- Python > 3.11.2
 
 ### Installation
 

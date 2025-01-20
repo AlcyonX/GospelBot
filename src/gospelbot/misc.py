@@ -29,7 +29,7 @@ from settings import *
 
 # Logs
 os.makedirs(settings["logs_folder"], exist_ok=True)
-handler = RotatingFileHandler(f"{settings["logs_folder"]}.log", maxBytes=50000, backupCount=10)
+handler = RotatingFileHandler(f"{settings['logs_folder']}.log", maxBytes=50000, backupCount=10)
 
 logging.basicConfig(
     level=logging.INFO,
